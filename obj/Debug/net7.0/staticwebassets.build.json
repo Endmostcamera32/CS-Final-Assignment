@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "Hash": "pKPknXKSke3whtLYwRf3Dk7vH2JIwwV688uEsei9O/U=",
+  "Source": "CS-chatApp",
+  "BasePath": "_content/CS-chatApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "CS-chatApp\\wwwroot",
+      "Source": "CS-chatApp",
+      "ContentRoot": "E:\\FSWD\\github_desk_c\\CS-chatApp\\wwwroot\\",
+      "BasePath": "_content/CS-chatApp",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "E:\\FSWD\\github_desk_c\\CS-chatApp\\wwwroot\\assets\\index-94e23fee.js",
+      "SourceId": "CS-chatApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\FSWD\\github_desk_c\\CS-chatApp\\wwwroot\\",
+      "BasePath": "_content/CS-chatApp",
+      "RelativePath": "assets/index-94e23fee.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\index-94e23fee.js"
+    },
+    {
+      "Identity": "E:\\FSWD\\github_desk_c\\CS-chatApp\\wwwroot\\assets\\index-d526a0c5.css",
+      "SourceId": "CS-chatApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\FSWD\\github_desk_c\\CS-chatApp\\wwwroot\\",
+      "BasePath": "_content/CS-chatApp",
+      "RelativePath": "assets/index-d526a0c5.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\index-d526a0c5.css"
+    },
+    {
+      "Identity": "E:\\FSWD\\github_desk_c\\CS-chatApp\\wwwroot\\index.html",
+      "SourceId": "CS-chatApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\FSWD\\github_desk_c\\CS-chatApp\\wwwroot\\",
+      "BasePath": "_content/CS-chatApp",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "E:\\FSWD\\github_desk_c\\CS-chatApp\\wwwroot\\vite.svg",
+      "SourceId": "CS-chatApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\FSWD\\github_desk_c\\CS-chatApp\\wwwroot\\",
+      "BasePath": "_content/CS-chatApp",
+      "RelativePath": "vite.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\vite.svg"
+    }
+  ]
+}
