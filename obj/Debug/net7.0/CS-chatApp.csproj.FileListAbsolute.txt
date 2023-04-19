@@ -282,7 +282,6 @@ E:\FSWD\github_desk_c\CS-chatApp\bin\Debug\net7.0\chatFEJS\package.json
 E:\FSWD\github_desk_c\CS-chatApp\bin\Debug\net7.0\CS-chatApp.staticwebassets.runtime.json
 E:\FSWD\github_desk_c\CS-Final-Assignment\bin\Debug\net7.0\appsettings.Development.json
 E:\FSWD\github_desk_c\CS-Final-Assignment\bin\Debug\net7.0\appsettings.json
-E:\FSWD\github_desk_c\CS-Final-Assignment\bin\Debug\net7.0\chatFEJS\package.json
 E:\FSWD\github_desk_c\CS-Final-Assignment\bin\Debug\net7.0\CS-chatApp.staticwebassets.runtime.json
 E:\FSWD\github_desk_c\CS-Final-Assignment\bin\Debug\net7.0\CS-chatApp.exe
 E:\FSWD\github_desk_c\CS-Final-Assignment\bin\Debug\net7.0\CS-chatApp.deps.json
@@ -562,3 +561,4 @@ E:\FSWD\github_desk_c\CS-Final-Assignment\obj\Debug\net7.0\refint\CS-chatApp.dll
 E:\FSWD\github_desk_c\CS-Final-Assignment\obj\Debug\net7.0\CS-chatApp.pdb
 E:\FSWD\github_desk_c\CS-Final-Assignment\obj\Debug\net7.0\CS-chatApp.genruntimeconfig.cache
 E:\FSWD\github_desk_c\CS-Final-Assignment\obj\Debug\net7.0\ref\CS-chatApp.dll
+E:\FSWD\github_desk_c\CS-Final-Assignment\bin\Debug\net7.0\chatFrontEnd\package.json

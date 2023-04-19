@@ -59,6 +59,7 @@ const ChatInput = (props) => {
       <br />
       <br />
       <button>Submit</button>
+      <hr />
     </form>
   );
 };

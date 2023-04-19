@@ -7,15 +7,20 @@ import ChatInput from "./ChatInput.jsx";
 
 const Chat = () => {
   const { connection } = useSignalR("/r/chat");
+  const [allChats, setAllChats] = useState([]);
   const [chat, setChat] = useState([]);
   const [channels, setChannels] = useState([]);
+  const [channelToShow, setChannelToShow] = useState(0);
+
   useEffect(() => {
     (async () => {
       await axios.get("/api/messages").then((result) => {
         // console.log(result);
         const theData = result.data.map((m) => {
-          return { user: m.fakeUserName, message: m.text };
+          console.log(m)
+          return { user: m.fakeUserName, message: m.text, channelId: m.channelId };
         });
+        setAllChats(theData);
         setChat(theData);
       });
     })();
@@ -29,6 +34,23 @@ const Chat = () => {
         .catch((error) => console.log(error));
     })();
   }, []);
+  useEffect(() => {
+    if (channelToShow === "0" && allChats === chat) {
+      return;
+    } else if (channelToShow === "0" && allChats !== chat) {
+      setChat(allChats);
+    } else {
+      console.log(channelToShow);
+      console.log(typeof(channelToShow));
+      console.log(allChats)
+      const theChatToShow = allChats.filter(
+        (m) => m.channelId == channelToShow
+      );
+
+      console.log(theChatToShow)
+      setChat(theChatToShow);
+    }
+  }, [channelToShow]);
 
   useEffect(() => {
     if (!connection) {
@@ -70,8 +92,20 @@ const Chat = () => {
       <br></br>
       <br></br>
       <br></br>
-      <ChatInput sendMessage={sendMessage} listOfChannels={channels}/>
-      <hr />
+      <ChatInput sendMessage={sendMessage} listOfChannels={channels} />
+      <label htmlFor="Channels">Channel: </label>
+      <select
+        name="Channels"
+        id="Channels"
+        onChange={(e) => setChannelToShow(e.target.value)}
+      >
+        <option value={"0"}>All Chats from all channels</option>
+        {channels?.map((m) => (
+          <option key={m.channelId} value={m.channelId}>
+            {m.channelName}
+          </option>
+        ))}
+      </select>
       <ChatWindow chat={chat} />
     </div>
   );
