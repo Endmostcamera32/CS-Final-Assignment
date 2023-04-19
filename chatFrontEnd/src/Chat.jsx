@@ -55,9 +55,10 @@ const Chat = () => {
     if (!connection) {
       return;
     } else {
-      connection.on("ReceiveMessages", (user, message) => {
+      connection.on("ReceiveMessages", (user, message, channelId) => {
         console.log({ user: user, message: message });
-        setChat((chat) => [...chat, { user: user, message: message }]);
+        setAllChats((chat) => [...chat, { user: user, message: message, channelId }]);
+        setChat((chat) => [...chat, { user: user, message: message, channelId }]);
       });
     }
   }, [connection]);
