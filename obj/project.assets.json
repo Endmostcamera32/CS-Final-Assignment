@@ -11334,11 +11334,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\FSWD\\github_desk_c\\CS-chatApp\\CS-chatApp.csproj",
+      "projectUniqueName": "E:\\FSWD\\github_desk_c\\CS-Final-Assignment\\CS-chatApp.csproj",
       "projectName": "CS-chatApp",
-      "projectPath": "E:\\FSWD\\github_desk_c\\CS-chatApp\\CS-chatApp.csproj",
+      "projectPath": "E:\\FSWD\\github_desk_c\\CS-Final-Assignment\\CS-chatApp.csproj",
       "packagesPath": "C:\\Users\\sohra\\.nuget\\packages\\",
-      "outputPath": "E:\\FSWD\\github_desk_c\\CS-chatApp\\obj\\",
+      "outputPath": "E:\\FSWD\\github_desk_c\\CS-Final-Assignment\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\sohra\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -7,8 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CS_chatApp.Data;
 using CS_chatApp.Models;
-using Microsoft.AspNetCore.SignalR;
-using CS_chatApp.Hubs;
 
 namespace CS_chatApp.Controllers
 {
@@ -17,8 +15,6 @@ namespace CS_chatApp.Controllers
     public class ChannelsController : ControllerBase
     {
         private readonly DatabaseContext _context;
-        private readonly IHubContext<ChatHub> _hub;
-
 
         public ChannelsController(DatabaseContext context)
         {
@@ -29,10 +25,10 @@ namespace CS_chatApp.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Channel>>> GetChannels()
         {
-            if (_context.Channels == null)
-            {
-                return NotFound();
-            }
+          if (_context.Channels == null)
+          {
+              return NotFound();
+          }
             return await _context.Channels.ToListAsync();
         }
 
@@ -40,10 +36,10 @@ namespace CS_chatApp.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Channel>> GetChannel(int id)
         {
-            if (_context.Channels == null)
-            {
-                return NotFound();
-            }
+          if (_context.Channels == null)
+          {
+              return NotFound();
+          }
             var channel = await _context.Channels.FindAsync(id);
 
             if (channel == null)
@@ -90,18 +86,15 @@ namespace CS_chatApp.Controllers
         [HttpPost]
         public async Task<ActionResult<Channel>> PostChannel(Channel channel)
         {
-            if (_context.Channels == null)
-            {
-                return Problem("Entity set 'DatabaseContext.Channels'  is null.");
-            }
+          if (_context.Channels == null)
+          {
+              return Problem("Entity set 'DatabaseContext.Channels'  is null.");
+          }
             _context.Channels.Add(channel);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetChannel", new { id = channel.ChannelId }, channel);
         }
-
-
-
 
         // DELETE: api/Channels/5
         [HttpDelete("{id}")]

@@ -72,22 +72,6 @@ namespace CS_chatApp.Migrations
                     b.ToTable("Messages");
                 });
 
-            modelBuilder.Entity("CS_chatApp.Models.User", b =>
-                {
-                    b.Property<int>("UserId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("UserId"));
-
-                    b.Property<string>("UserName")
-                        .HasColumnType("text");
-
-                    b.HasKey("UserId");
-
-                    b.ToTable("Users");
-                });
-
             modelBuilder.Entity("CS_chatApp.Models.Message", b =>
                 {
                     b.HasOne("CS_chatApp.Models.Channel", "Channel")

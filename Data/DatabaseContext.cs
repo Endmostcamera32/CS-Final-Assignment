@@ -19,5 +19,4 @@ public class DatabaseContext : DbContext
     }
     public DbSet<Channel> Channels => Set<Channel>();
     public DbSet<Message> Messages => Set<Message>();
-    public DbSet<User> Users => Set<User>();
 }

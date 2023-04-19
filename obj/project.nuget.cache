@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SFKE+RLQcagh8HVIoQzy2dRwsFgtUIW8dj6kDUS+b+TBIef3WtR95nzPV0nzrucoLaWF5cSxilM5Gy6Io6Ze3Q==",
+  "dgSpecHash": "ElC4FfUCRwHWJ0GHOiwXNoH2rSFUO9WB8rXH7ul3LSBbNVnTa/xgJ/wCgcoRRmuMEvz+427OCYRyUfCnLtlGQw==",
   "success": true,
-  "projectFilePath": "E:\\FSWD\\github_desk_c\\CS-chatApp\\CS-chatApp.csproj",
+  "projectFilePath": "E:\\FSWD\\github_desk_c\\CS-Final-Assignment\\CS-chatApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sohra\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\sohra\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

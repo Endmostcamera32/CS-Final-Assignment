@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CS_chatApp.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20230402035032_newehg")]
-    partial class newehg
+    [Migration("20230418235213_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -73,23 +73,6 @@ namespace CS_chatApp.Migrations
                     b.HasIndex("ChannelId");
 
                     b.ToTable("Messages");
-                });
-
-            modelBuilder.Entity("CS_chatApp.Models.User", b =>
-                {
-                    b.Property<int>("UserId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("UserId"));
-
-                    b.Property<string>("UserName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("UserId");
-
-                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("CS_chatApp.Models.Message", b =>

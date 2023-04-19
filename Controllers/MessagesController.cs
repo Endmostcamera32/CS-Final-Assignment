@@ -1,4 +1,8 @@
-
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CS_chatApp.Data;
@@ -14,7 +18,6 @@ namespace CS_chatApp.Controllers
     {
         private readonly DatabaseContext _context;
         private readonly IHubContext<ChatHub> _hub;
-
         public MessagesController(DatabaseContext context, IHubContext<ChatHub> hub)
         {
             _context = context;
@@ -25,10 +28,10 @@ namespace CS_chatApp.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Message>>> GetMessages()
         {
-          if (_context.Messages == null)
-          {
-              return NotFound();
-          }
+            if (_context.Messages == null)
+            {
+                return NotFound();
+            }
             return await _context.Messages.ToListAsync();
         }
 
@@ -36,10 +39,10 @@ namespace CS_chatApp.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Message>> GetMessage(int id)
         {
-          if (_context.Messages == null)
-          {
-              return NotFound();
-          }
+            if (_context.Messages == null)
+            {
+                return NotFound();
+            }
             var message = await _context.Messages.FindAsync(id);
 
             if (message == null)
@@ -86,10 +89,10 @@ namespace CS_chatApp.Controllers
         [HttpPost]
         public async Task<ActionResult<Message>> PostMessage(Message message)
         {
-          if (_context.Messages == null)
-          {
-              return Problem("Entity set 'DatabaseContext.Messages'  is null.");
-          }
+            if (_context.Messages == null)
+            {
+                return Problem("Entity set 'DatabaseContext.Messages'  is null.");
+            }
             _context.Messages.Add(message);
             await _context.SaveChangesAsync();
 
@@ -99,7 +102,8 @@ namespace CS_chatApp.Controllers
         [HttpPost("{channelId}/Messages")]
         public async Task<Message> PostChannelMessage(Message message)
         {
-             _context.Messages.Add(message);
+            Console.WriteLine(message.FakeUserName);
+            _context.Messages.Add(message);
             await _context.SaveChangesAsync();
             await _hub.Clients.All.SendAsync("ReceiveMessages", message.FakeUserName, message.Text);
 
@@ -125,6 +129,7 @@ namespace CS_chatApp.Controllers
 
             return NoContent();
         }
+
 
         private bool MessageExists(int id)
         {
