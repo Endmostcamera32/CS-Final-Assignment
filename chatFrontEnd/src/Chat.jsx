@@ -17,8 +17,12 @@ const Chat = () => {
       await axios.get("/api/messages").then((result) => {
         // console.log(result);
         const theData = result.data.map((m) => {
-          console.log(m)
-          return { user: m.fakeUserName, message: m.text, channelId: m.channelId };
+          console.log(m);
+          return {
+            user: m.fakeUserName,
+            message: m.text,
+            channelId: m.channelId,
+          };
         });
         setAllChats(theData);
         setChat(theData);
@@ -40,14 +44,9 @@ const Chat = () => {
     } else if (channelToShow === "0" && allChats !== chat) {
       setChat(allChats);
     } else {
-      console.log(channelToShow);
-      console.log(typeof(channelToShow));
-      console.log(allChats)
       const theChatToShow = allChats.filter(
         (m) => m.channelId == channelToShow
       );
-
-      console.log(theChatToShow)
       setChat(theChatToShow);
     }
   }, [channelToShow]);
