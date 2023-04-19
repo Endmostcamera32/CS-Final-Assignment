@@ -4,14 +4,14 @@ import "./App.css";
 const ChatInput = (props) => {
   const [user, setUser] = useState("");
   const [message, setMessage] = useState("");
-  const [channel, setChannel] = useState("");
+  const [channel, setChannel] = useState(0);
 
   const onSubmit = (e) => {
     e.preventDefault();
     console.log(channel);
     const isUserProvided = user && user !== "";
     const isMessageProvided = message && message !== "";
-    const isChannelProvided = channel && channel !== "";
+    const isChannelProvided = channel && channel !== 0;
 
     if (isUserProvided && isMessageProvided && isChannelProvided) {
       props.sendMessage(user, message, channel);
@@ -51,7 +51,7 @@ const ChatInput = (props) => {
       >
         <option>Please choose one option</option>
         {props.listOfChannels?.map((m) => (
-          <option key={m.channelId} value={m.channelName}>
+          <option key={m.channelId} value={m.channelId}>
             {m.channelName}
           </option>
         ))}
