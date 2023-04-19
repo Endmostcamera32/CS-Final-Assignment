@@ -45,7 +45,7 @@ const Chat = () => {
     if (connection) {
       try {
         // await connection.invoke("SendMessage", user, message);
-        await axios.post(`/api/Messages/${1}/Messages`, {
+        await axios.post(`/api/Messages/${channel}/Messages`, {
           text: message,
           fakeUserName: user,
           ChannelId: channel,
@@ -70,12 +70,7 @@ const Chat = () => {
       <br></br>
       <br></br>
       <br></br>
-      <ChatInput sendMessage={sendMessage} listOfChannels={channels} />
-      <select name="Channels" id="Channels">
-        {channels.map((m) => {
-          <option value={m.channelName}>{m.channelName}</option>;
-        })}
-      </select>
+      <ChatInput sendMessage={sendMessage} listOfChannels={channels}/>
       <hr />
       <ChatWindow chat={chat} />
     </div>

@@ -100,12 +100,12 @@ namespace CS_chatApp.Controllers
         }
 
         [HttpPost("{channelId}/Messages")]
-        public async Task<Message> PostChannelMessage(Message message)
+        public async Task<Message> PostChannelMessage(Message message, int channelId)
         {
-            Console.WriteLine(message.FakeUserName);
+
             _context.Messages.Add(message);
             await _context.SaveChangesAsync();
-            await _hub.Clients.All.SendAsync("ReceiveMessages", message.FakeUserName, message.Text);
+            await _hub.Clients.All.SendAsync("ReceiveMessages", message.FakeUserName, message.Text, channelId);
 
             return message;
         }
